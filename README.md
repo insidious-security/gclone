@@ -22,7 +22,7 @@ $ python(3) gclone.py
  ╚═════╝  ╚═════╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
                 /!\ sidious /!\                                                    
                                                         
-Enter a github repository: insidious-security
+Enter a github account: insidious-security
 Would you like to compress the repositories? y/n: y
 ```
 

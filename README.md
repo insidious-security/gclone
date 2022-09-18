@@ -9,6 +9,8 @@ Simply run the code and provide a github account name:
 $ git clone https://github.com/insidious-security/gclone.git
 # Change into the gclone directory:
 $ cd gclone
+# Install required python modules:
+$ pip3 install BeautifulSoup4 lxml
 # Run the script
 $ python(3) gclone.py
 

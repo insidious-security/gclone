@@ -2,7 +2,7 @@
 gclone will scrape all repositories from a github page
 
 ### Usage:
-Simply run the code and provide a github project name:
+Simply run the code and provide a github account name:
 
 ```bash
 # Clone this repository

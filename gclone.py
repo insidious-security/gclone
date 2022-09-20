@@ -23,7 +23,7 @@ def banner():
 def main():
     try:
         
-        git_repo = input("Enter a github repository: ")
+        git_repo = input("Enter a github account: ")
         comp_rep = input("Would you like to compress the repositories? y/n: ")
         git_url = requests.get(f"https://github.com/{git_repo}?tab=repositories")
         git_soup = BeautifulSoup(git_url.text, 'lxml')

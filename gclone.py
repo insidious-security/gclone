@@ -32,7 +32,7 @@ def main():
             clone = os.popen(f"git clone https://github.com/{git_repo}/{git_rname}")
             os.wait()
             if comp_rep == "y":
-                os.popen(f"tar cfv {git_rname}.tar {git_rname}")
+                os.popen(f"tar cfv {git_rname}.tar {git_rname}",'w')
                 os.wait()
                 os.popen(f"rm -rf {git_rname}")
                 os.wait()

@@ -1,7 +1,9 @@
 #Author:sidious
 import os
+import time
 import lxml
 import requests
+import tarfile
 from bs4 import BeautifulSoup
 
 def banner():
@@ -21,7 +23,7 @@ def banner():
 def main():
     try:
         
-        git_repo = input("Enter a github account: ")
+        git_repo = input("Enter a github repository: ")
         comp_rep = input("Would you like to compress the repositories? y/n: ")
         git_url = requests.get(f"https://github.com/{git_repo}?tab=repositories")
         git_soup = BeautifulSoup(git_url.text, 'lxml')
@@ -29,15 +31,22 @@ def main():
         
         for rep in git_payload:
             git_rname = rep.find('a').text.strip()
-            clone = os.popen(f"git clone https://github.com/{git_repo}/{git_rname}")
+            clone = os.popen(f"git clone https://github.com/{git_repo}/{git_rname} > /dev/null 2>&1")
             os.wait()
+            
             if comp_rep == "y":
-                os.popen(f"tar cfv {git_rname}.tar {git_rname}",'w')
+                print(f"[*]Status: {git_rname} cloning", end="\r", flush=True)
+                time.sleep(1)
+                os.popen(f"tar cfv {git_rname}.tar {git_rname} > /dev/null 2>&1",'w')
                 os.wait()
                 os.popen(f"rm -rf {git_rname}")
                 os.wait()
+                print(f"[*]Status: {git_rname} completed")
             else:
                 pass
+                print(f"[*]Status: {git_rname} cloning", end="\r", flush=True)
+                time.sleep(1)
+                print(f"[*]Status: {git_rname} completed")
 
     except KeyboardInterrupt:
         print("\nExited by user..\n")

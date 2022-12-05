@@ -2,9 +2,10 @@
 gclone will scrape all repositories from a github page
 
 ### Usage:
-Simply run the code and provide a github account name:
+Simply run the code and provide a github account name:     
 
 ```bash
+# Make sure git is installed on your system!
 # Clone this repository
 $ git clone https://github.com/insidious-security/gclone.git
 # Change into the gclone directory:
